@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+  <head>
+
+    <!--Meta-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+    <!--JavaScript Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!--Jquery-->
+    <script src="lib/jquery-3.6.0.min.js"></script>
+
+    <!--Components-->
+    <script src="acao.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="components/redirecionar.js"></script>
+    <script src="components/local.js"></script>
+    <script src="components/QRcode.js"></script>
+
+    <!--Mapquest-->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
+    <!--Estilo-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 offset-6">
+          <br>
+
+          <!-- Botões -->
+          <div class="btn-group">
+            <button id="pegardados" type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" onclick= "pegardados()"data-bs-target="#exampleModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+              </svg>
+            </button>
+
+            <button class="btn btn-outline-primary btn-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+              </svg>
+            </button>
+
+            <a href="index.html" class="btn btn-outline-danger btn-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+              </svg>
+            </a>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Informações Do Usuário</h5>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST">
+                    <input type="hidden" id="cd" aria-describedby="nome" placeholder=" Digite seu nome completo" name="cd"><br>
+                    <label for="nome completo">Nome completo:</label><br>
+                    <input type="text" id="name" aria-describedby="nome" placeholder=" Digite seu nome completo" name="nome"><br>
+                    <label for="nome completo">Login:</label><br>
+                    <input type="text" id="log" aria-describedby="login" placeholder=" Digite um login" name="login"><br>
+                    <label for="RG">RG:</label><br>
+                    <input type="text" id="reg" aria-describedby="rg" placeholder=" 12.345.678-9" name="rg"><br>
+                    <label for="telefone">Telefone:</label><br>
+                    <input type="text" id="tel" aria-describedby="tel" placeholder="(DDD)XXXXX-XXXX" name="telefone"><br>
+                    <label for="exampleInputPassword1">Senha:</label><br>
+                    <input type="text" id="sen" placeholder="Digite sua senha" name="senha"><br>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="habilita" type="button"  class="btn btn-outline-primary btn-block">Editar</button>
+                    <button id="salvar" type="hidden"  class="btn btn-outline-primary btn-block">Salvar</button>
+                    <button type="button" class="btn btn-outline-danger btn-block" data-bs-dismiss="modal">voltar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-10">
+          <br>
+          <center><h1 class="text-white">Bem vindo!</h1></center>
+          <br>
+        </div>
+      </div>
+      
+      <div class="row" id="conteudo">
+        <div class="col-sm">
+          <br>
+          <h5>Veja a estação de guarda-sol mais próxima de você:</h5>
+          <div class="map" id="map">
+            <br>
+            <br>
+            <h1 id="ero"></h1>
+          </div>
+          
+          <button type="button" class="btn btn-outline-primary btn-block" id="codigo">Escanear código QR</button>
+          <a href="addlocal.html" class="btn btn-outline-primary btn-block" id="adc">Adicionar Posto</a>
+         </div>
+        </div>
+      </div>
+  </body>
+</html>

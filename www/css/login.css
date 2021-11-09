@@ -1,0 +1,61 @@
+/* body{
+  font-family: Arial;
+  background-color: DeepSkyBlue;
+} */
+
+input{
+  width: 90%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+input:hover{
+  background-color: Lavender;
+}
+
+.login{
+  width: 60%;
+  background-color: PowderBlue;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  color: white;
+}
+
+#btnlogin{
+  margin-top: 2%;
+  background-color: DodgerBlue;
+  border-color: lightblue;
+  margin-bottom: 5%;
+  padding: 15px;
+  width: 90%;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#btnlogin:hover{
+  background-color: steelblue;
+}
+a{
+  color: Blue;
+}
+a:hover{
+  color: steelblue;
+}
+
+/*
+.logo{
+  position: absolute;
+  left: 50%;
+  top: -20%;
+  transform: translate(-50%, -50%);
+}
+*/

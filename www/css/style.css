@@ -1,0 +1,113 @@
+body{
+background-color: DeepSkyBlue;
+}
+
+h1{
+  font-style: initial;
+  color: white;
+}
+
+label{
+  font-size: 2.8vh;
+}
+
+input{
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+input:hover{
+  background-color: Lavender;
+}
+
+button{
+  margin-top: 2%;
+  background-color: DodgerBlue;
+  border-size: 10px;
+  border-color: lightblue;
+  padding: 5%;
+  width: 90%;
+  border-radius: 10px;
+  color: white;
+  font-size: 2.8vh;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: steelblue;
+}
+
+a{
+  text-decoration: none;
+}
+
+#cadastro{
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  height: auto;
+}
+
+.infos{
+  height: auto;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  margin-bottom: 5%;
+}
+
+#btn_cadastrar{
+  margin-top: 4%;
+  background-color: DodgerBlue;
+  border-radius: 10px;
+  color: white;
+  font-size: 3vh;
+  cursor: pointer;
+}
+
+#btn_cadastrar:hover{
+  background-color: steelblue;
+}
+
+#btn_cancelar{
+  margin-top: 4%;
+  background-color: IndianRed;
+  border-radius: 10px;
+  color: white;
+  font-size: 3vh;
+  cursor: pointer;
+}
+
+#btn_cancelar:hover{
+  background-color: LightCoral;
+}
+
+#adc{
+  margin-bottom: 10px;
+  margin-bottom: 5%;
+}
+
+.map{
+margin-top: 20px;
+width: 100%;
+height: 35vh;
+}
+
+#conteudo{
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5%;
+  height: auto;
+}
+#codigo{
+  margin-top: 5vh;
+  margin-bottom: 5%;
+}
+
+#voltar{
+  margin-bottom: 5%;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="components/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="acao.js"></script>
+    <script src="components/redirecionar.js"></script>
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+  </head>
+
+  <body>
+
+    <form method="post" id="cadastros">
+
+      <center><h1>Cadastrar</h1></center>
+      
+      <div id="cadastro">
+        <div class="infos">
+          <br>
+          <label for="nome completo">Nome completo:</label><br>
+          <input type="text" id="nome" aria-describedby="nome" placeholder=" Digite seu nome completo" name="nome"><br>
+          <label for="nome completo">Login:</label><br>
+          <input type="text" id="login" aria-describedby="login" placeholder=" Digite um login" name="login"><br>
+          <label for="RG">RG:</label><br>
+          <input type="text" id="rg" aria-describedby="rg" placeholder=" 12.345.678-9" name="rg"><br>
+          <label for="telefone">Telefone:</label><br>
+          <input type="text" id="telefone" aria-describedby="tel" placeholder="(DDD)XXXXX-XXXX" name="telefone"><br>
+          <label for="exampleInputPassword1">Senha:</label><br>
+          <input type="password" id="senha" placeholder="Digite sua senha" name="senha"><br>
+          <center><button type="submit" class="btn btn-outline-primary btn-block" id="btn_cadastrar">Cadastrar</button></center>
+          <center><a href="index.html" class="btn btn-outline-danger btn-block" id="btn_cancelar">Cancelar</a></center><br>
+        </div>
+      </div>
+    </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="alerta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <a href="index.html" type="button" class="btn btn-primary">Ok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

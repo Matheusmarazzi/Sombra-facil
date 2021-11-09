@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="tokenizer-container"></div>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        const tokenizer = mp.checkout({
+            tokenizer: {
+                totalAmount: 4000,
+                summary: {
+                    arrears: 18,
+                    taxes: 20,
+                    charge: 30,
+                    discountLabel: 'discount label',
+                    discount: 5,
+                    productLabel: 'product label',
+                    product: 400,
+                    shipping: 10,
+                    title: 'summary title',
+                },
+                savedCards: {
+                    cardIds: 'CARD_ID',
+                    customerId: 'CUSTOMER_ID'
+                },
+                installments: {
+                    minInstallments: 2,
+                    maxInstallments: 9,
+                },
+                backUrl: 'https://mpago.la/2cPLJmu'
+            },
+            theme: {
+                elementsColor: '#2ddc52',
+                headerColor: '#2ddc52'
+            }
+        });
+        
+        tokenizer.render({
+            container: '.tokenizer-container',
+            label: 'Pagar'
+        });
+    </script>
+</body>
+</html>

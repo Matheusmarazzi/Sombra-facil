@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="components/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="acao.js"></script>
+    <script src="components/redirecionar.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-10">
+          <br>
+          <center><h1 class="text-white">Adicionar Local</h1></center>
+        </div>
+      </div>
+      <br>
+
+      <div class="row" id="cadastro">
+        <div class="col-sm">
+          <form method="post" id="adicionar">
+
+            <br>
+            <div class="form-group">
+              <label for="nome completo">Nome do Posto:</label>
+              <input type="text" class="form-control" id="nomelocal" aria-describedby="nome" placeholder="Nome" name="nome_posto">
+              <label for="nome completo">latitude:</label>
+              <input type="text" class="form-control" id="lat" aria-describedby="nome" placeholder="Latitude" name="lat">
+              <label for="nome completo">longitude:</label>
+              <input type="text" class="form-control" id="long" aria-describedby="login" placeholder="Longitude" name="long">
+            </div>
+            <button type="submit" class="btn btn-outline-primary btn-block" id="login">Adicionar</button>
+            <a class="btn btn-outline-primary btn-block" id="pegarlocal">capturar</a>
+            <a href="paginaadm.html" class="btn btn-outline-danger btn-block" id="voltar">Voltar</a>
+
+          </form> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="alerta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <a type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
