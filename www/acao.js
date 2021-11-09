@@ -177,10 +177,35 @@ $(document).on('click','#salvar',function(e) {
 
 $(document).on('click','.local',function(){
 	var id = $(this).attr('id');
-	localStorage.setItem('id',cd);
+	localStorage.setItem('id',id);
 	window.location="produto.html";
-});  
-    
+});
+
+// cadastrar produto
+
+$(document).on('submit','#produto',function(e) {
+  var url = 'https://maestoques.profrodolfo.com.br/sombra-facil/';
+
+	$.ajax({
+		url: url+'adddisponivel.php',
+		data:$(this).serialize(),
+		type:'POST',
+		success: function(retorno){
+			//navigator.notification.alert(retorno, alertCallback, 'Aviso!');
+      //alert(retorno);
+			$('#quant').val("");
+      $(".modal-body").html(retorno);
+      $("#alerta").modal("show");
+		}
+	});
+
+	e.preventDefault();
+
+});
+
+
+
+
 
 
 

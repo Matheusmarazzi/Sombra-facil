@@ -13,6 +13,7 @@
     <script src="components/redirecionar.js"></script>
 
     <link rel="stylesheet" href="components/loader.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -35,15 +36,22 @@
 
             <br>
             <div class="form-group">
-              <label for="nome completo">Nome do Posto:</label>
+              <label>Nome do Posto:</label>
               <input type="text" class="form-control" id="nomelocal" aria-describedby="nome" placeholder="Nome" name="nome_posto">
-              <label for="nome completo">latitude:</label>
+              <label>Latitude:</label>
               <input type="text" class="form-control" id="lat" aria-describedby="nome" placeholder="Latitude" name="lat">
-              <label for="nome completo">longitude:</label>
+              <label>Longitude:</label>
               <input type="text" class="form-control" id="long" aria-describedby="login" placeholder="Longitude" name="long">
+              <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select> -->
             </div>
-            <button type="submit" class="btn btn-outline-primary btn-block" id="login">Adicionar</button>
-            <a class="btn btn-outline-primary btn-block" id="pegarlocal">capturar</a>
+            <a class="btn btn-outline-success btn-block" id="pegarlocal">Capturar</a>
+            <button type="submit" class="btn btn-outline-primary btn-block" id="login">Adicionar Posto</button>
+            <a href="locais.html" class="btn btn-outline-primary btn-block">Adicionar Produto</a>
             <a href="paginaadm.html" class="btn btn-outline-danger btn-block" id="voltar">Voltar</a>
 
           </form> 

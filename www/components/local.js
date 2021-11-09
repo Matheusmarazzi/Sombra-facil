@@ -23,16 +23,19 @@
        L.marker([pos[i].latitude, pos[i].longitude],{
           icon: L.mapquest.icons.marker(),
           draggable: false
-        }).bindPopup(pos[i].nome_posto+ '<br>'+pos[i].tipo_produto+ ' disponivel:'+pos[i].quantidade).addTo(map);
+        }).bindPopup(pos[i].nome_posto+ '<br>'+pos[i].tipo_produto+ ' disponivel:'+pos[i].quantidade+ '<br><b class="rota" lat="'+pos[i].latitude+'" lon="'+pos[i].longitude+'"> Ir até lá</b>').addTo(map);
         }
        }
      });
         //________________________________________rotas_____________________________________________________________________________________
-        $(document).on('click', '#rota',function(){
+        $(document).on('click', '.rota',function(){
+          var a = $(this).attr('lat');
+          var b = $(this).attr('lon');
+
         var directions = L.mapquest.directions();
           directions.route({
             start: [lat,long],
-            end: [-24.183347, -46.782124]
+            end: [a, b]
           });
       
       var dir = MQ.routing.directions();
@@ -78,6 +81,8 @@
         directions: dir,
         fitBounds: true
       }));
+      var ten = 0;
+      ten = ten+1;
         });
       //________________________________________rotas-final______________________________________________________________________
   }

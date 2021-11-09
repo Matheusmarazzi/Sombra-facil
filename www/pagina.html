@@ -1,12 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
   <head>
-<script src="https://sdk.mercadopago.com/js/v2"></script>
- <script>
-    const mp = new MercadoPago('APP_USR-3990043199723653-101303-c3cfffbcae7251f70581355da61a5612-178842358', {
-        locale: 'en-US'
-    })
-  </script>
+
     <!--Meta-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
@@ -81,7 +76,7 @@
                     <label for="telefone">Telefone:</label><br>
                     <input type="text" id="tel" aria-describedby="tel" placeholder="(DDD)XXXXX-XXXX" name="telefone"><br>
                     <label for="exampleInputPassword1">Senha:</label><br>
-                    <input type="text" id="sen" placeholder="Digite sua senha" name="senha"><br>
+                    <input type="Password" id="sen" placeholder="Digite sua senha" name="senha"><br>
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -115,7 +110,7 @@
             <h1 id="ero"></h1>
           </div>
           
-          <!-- <script>
+          <script>
           // Adicione as credenciais do SDK
             const mp = new MercadoPago('APP_USR-4722bff9-92d7-4444-9526-85e638f8d6aa', {
                   locale: 'pt-BR'
@@ -131,10 +126,9 @@
                       label: 'Pagar', // Muda o texto do botão de pagamento (opcional)
                 }
           });
-          </script> -->
+          </script>
 
           <button type="button" class="btn btn-outline-primary btn-block" id="codigo">Escanear código QR</button>
-          <!-- <button type="button" class="btn btn-outline-primary btn-block" id="rota">Mostrar rota</button> -->
           </div>
         </div>
       </div>

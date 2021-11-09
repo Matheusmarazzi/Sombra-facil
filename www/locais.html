@@ -38,7 +38,7 @@ function locais(){
          var x = lo.length;
          var texto = '';
          for(var i = 0; i<x;i++){
-           texto += '<a href="" id="'+lo[i].cd_localizacao+'"  class="local">'+lo[i].nome_posto+'</a><br>';
+           texto += '<a id="'+lo[i].cd_localizacao+'"  class="local">'+lo[i].nome_posto+'</a><br>';
             }
             $('#listar').html(texto);
         }

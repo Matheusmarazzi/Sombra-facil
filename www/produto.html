@@ -1,19 +1,87 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <link rel="stylesheet" href="components/loader.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <script src="components/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="acao.js"></script>
+    <script src="components/redirecionar.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script>
-function teste(){
-  alert(localStorage.cd);
-}
+      function inserir(){
+      $('#cd_posto').val(localStorage.id);
+      }
     </script>
-</head>
-<body onload="teste()">
-    <!-- TODO: Please edit here -->
-</body>
+  </head>
+
+  <body onload="inserir()" onload="pegarnome()">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-10">
+          <br>
+          <center><h1 class="text-white">Adicionar Produto</h1></center>
+        </div>
+      </div>
+      <br>
+
+      <div class="row" id="cadastro">
+        <div class="col-sm">
+          <form method="post" id="produto">
+
+            <br>
+            <div class="form-group">
+              <input type="text" class="form-control" id="cd_posto" name="cd_posto" >
+              <label>Nome do Posto:</label>
+              <input type="text" class="form-control" id="nomelocal" aria-describedby="nome" placeholder="Nome" name="nome_posto">
+              <label>Quantidade Disponíveis:</label>
+              <input type="number" class="form-control" id="quant" aria-describedby="quantidade" name="quantidade">
+              <label>Produto:</label><br>
+              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Selecione a opção</option>
+                <option name="produto" value="1">Mesa</option>
+                <option name="produto" value="2">Tenda</option>
+              </select>
+              <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select> -->
+            </div>
+            <button type="submit" class="btn btn-outline-primary btn-block" id="login">Adicionar</button>
+            <a href="addlocal.html" class="btn btn-outline-danger btn-block" id="voltar">Voltar</a>
+
+          </form> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="alerta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <a  type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
 </html>
