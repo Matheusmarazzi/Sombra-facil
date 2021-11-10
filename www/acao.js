@@ -107,6 +107,8 @@ $(document).on('click','#pegarlocal',function(e) {
 function pegardados() {
     $('#cd').val(localStorage.cd);
     // $('#cd').hide();
+    $('#cd2').val(localStorage.cd);
+    $('#cd2').show();
     $('#name').val(localStorage.nome);
     $('#log').val(localStorage.login);
     $('#tel').val(localStorage.telefone);
@@ -138,6 +140,25 @@ $(document).on('submit','#formulario',function(e) {
           success: function(retorno){
             //navigator.notification.alert(retorno, alertCallback, 'Aviso!');
             //alert(retorno);
+
+            $("#body").html(retorno);
+            $("#alerta").modal("show");
+            
+            //redirecionar('index.html');
+          }
+        });
+        //enviar o form sem atualizar a pagina
+        e.preventDefault();
+
+});
+$(document).on('submit','#formulario2',function(e) {
+	var url = 'https://maestoques.profrodolfo.com.br/sombra-facil/';
+
+        $.ajax({
+          url: url+'deletar.php',
+          data:$(this).serialize(),
+          type:'POST',
+          success: function(retorno){
 
             $("#body").html(retorno);
             $("#alerta").modal("show");
