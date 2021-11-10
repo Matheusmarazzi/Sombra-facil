@@ -106,7 +106,7 @@ $(document).on('click','#pegarlocal',function(e) {
 });
 function pegardados() {
     $('#cd').val(localStorage.cd);
-    $('#cd').hide();
+    // $('#cd').hide();
     $('#name').val(localStorage.nome);
     $('#log').val(localStorage.login);
     $('#tel').val(localStorage.telefone);
@@ -117,7 +117,7 @@ function pegardados() {
     $('#sen').attr('readonly','readonly');
     $('#name').attr('readonly','readonly');
     $('#reg').attr('readonly','readonly');
-    $('#salvar').hide();
+    $('#atualizar').hide();
     $('#habilita').show();
 };
 $(document).on('click','#habilita', function() {
@@ -125,26 +125,23 @@ $(document).on('click','#habilita', function() {
     $('#tel').prop('readonly',false);
     $('#sen').prop('readonly',false);
     $('#habilita').hide();
-    $('#salvar').show();
+    $('#atualizar').show();
 });
 // função atualizar
-$(document).on('click','#salvar',function(e) {
+$(document).on('submit','#formulario',function(e) {
 	var url = 'https://maestoques.profrodolfo.com.br/sombra-facil/';
 
         $.ajax({
-          url: url+'cadastrar.php',
+          url: url+'atualizar.php',
           data:$(this).serialize(),
           type:'POST',
           success: function(retorno){
             //navigator.notification.alert(retorno, alertCallback, 'Aviso!');
             //alert(retorno);
-          
-            $('#nome').val("");
-            $('#login').val("");
-            $('#senha').val("");
-            $('#rg').val("");
-            $('#telefone').val("");
-            $(".modal-body").html(retorno);
+
+            $("#body").html(retorno);
+            $("#alerta").modal("show");
+            
             //redirecionar('index.html');
           }
         });

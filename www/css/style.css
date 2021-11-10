@@ -111,3 +111,21 @@ height: 35vh;
 #voltar{
   margin-bottom: 5%;
 }
+
+#rota{
+  margin-bottom: 5%;
+}
+
+.local{
+  background-color: Snow;
+  width: 80vw;
+  height: 5vh;
+  margin-top: 2vh;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 3vh;
+}
+
+.local:hover{
+  background-color: WhiteSmoke;
+}

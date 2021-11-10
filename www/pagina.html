@@ -65,7 +65,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Informações Do Usuário</h5>
                   </div>
                   <div class="modal-body">
-                    <form method="POST">
+                    <form method="POST" id="formulario">
                     <input type="hidden" id="cd" aria-describedby="nome" placeholder=" Digite seu nome completo" name="cd"><br>
                     <label for="nome completo">Nome completo:</label><br>
                     <input type="text" id="name" aria-describedby="nome" placeholder=" Digite seu nome completo" name="nome"><br>
@@ -77,12 +77,13 @@
                     <input type="text" id="tel" aria-describedby="tel" placeholder="(DDD)XXXXX-XXXX" name="telefone"><br>
                     <label for="exampleInputPassword1">Senha:</label><br>
                     <input type="Password" id="sen" placeholder="Digite sua senha" name="senha"><br>
-                    </form>
+                   
                   </div>
                   <div class="modal-footer">
                     <button id="habilita" type="button"  class="btn btn-outline-primary btn-block">Editar</button>
-                    <button id="salvar" type="hidden"  class="btn btn-outline-primary btn-block">Salvar</button>
+                    <button id="atualizar" type="hidden"  class="btn btn-outline-primary btn-block">Salvar</button>
                     <button type="button" class="btn btn-outline-danger btn-block" data-bs-dismiss="modal">voltar</button>
+                     </form>
                   </div>
                 </div>
               </div>
@@ -91,6 +92,21 @@
           </div>
         </div>
       </div>
+       <div class="modal fade" id="alerta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+          </div>
+          <div class="modal-body" id="body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <div class="row">
         <div class="col-sm-10">
@@ -109,24 +125,7 @@
             <br>
             <h1 id="ero"></h1>
           </div>
-          
-          <script>
-          // Adicione as credenciais do SDK
-            const mp = new MercadoPago('APP_USR-4722bff9-92d7-4444-9526-85e638f8d6aa', {
-                  locale: 'pt-BR'
-            });
-
-            // Inicialize o checkout
-            mp.checkout({
-                preference: {
-                    id: 'YOUR_PREFERENCE_ID'
-                },
-                render: {
-                      container: '.cho-container', // Indique o nome da class onde será exibido o botão de pagamento
-                      label: 'Pagar', // Muda o texto do botão de pagamento (opcional)
-                }
-          });
-          </script>
+      
 
           <button type="button" class="btn btn-outline-primary btn-block" id="codigo">Escanear código QR</button>
           </div>
