@@ -17,13 +17,30 @@
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-      function inserir(){
-      $('#cd_posto').val(localStorage.id);
-      }
+  $('document').ready(function (){
+        var url = 'https://maestoques.profrodolfo.com.br/sombra-facil/listartodoslocais.php?posto='+localStorage.id;
+        
+  $.ajax({
+       url:url,
+       type:'get',
+       data: null,
+       success:function(data){
+
+               
+         var teste = JSON.parse(data);
+         var nome = teste.nome_posto;
+
+
+
+        //  $('#nomelocal').val(teste.nome_posto);
+        $('#cd_posto').val(localStorage.id);
+        }
+    });
+      });
     </script>
   </head>
 
-  <body onload="inserir()" onload="pegarnome()">
+  <body >
 
     <div class="container-fluid">
       <div class="row">
@@ -44,7 +61,7 @@
               <label>Nome do Posto:</label>
               <input type="text" class="form-control" id="nomelocal" aria-describedby="nome" placeholder="Nome" name="nome_posto">
               <label>Quantidade Disponíveis:</label>
-              <input type="number" class="form-control" id="quant" aria-describedby="quantidade" name="quantidade">
+              <input type="number" class="form-control" id="quant" aria-describedby="quantidade" min="1" name="quantidade">
               <label>Produto:</label><br>
               <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option selected>Selecione a opção</option>

@@ -163,7 +163,7 @@ $(document).on('submit','#formulario2',function(e) {
             $("#body").html(retorno);
             $("#alerta").modal("show");
             
-            //redirecionar('index.html');
+            // redirecionar('index.html');
           }
         });
         //enviar o form sem atualizar a pagina
@@ -195,8 +195,12 @@ $(document).on('submit','#formulario2',function(e) {
 
 $(document).on('click','.local',function(){
 	var id = $(this).attr('id');
-	localStorage.setItem('id',id);
+
+  localStorage.setItem('id',id);
+
+
 	window.location="produto.html";
+
 });
 
 // cadastrar produto
@@ -220,7 +224,6 @@ $(document).on('submit','#produto',function(e) {
 	e.preventDefault();
 
 });
-
 
 
 
