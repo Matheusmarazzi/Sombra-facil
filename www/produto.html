@@ -26,13 +26,8 @@
        data: null,
        success:function(data){
 
-               
          var teste = JSON.parse(data);
-         var nome = teste.nome_posto;
-
-
-
-        //  $('#nomelocal').val(teste.nome_posto);
+        $('#nomelocal').val(teste.nome_posto);
         $('#cd_posto').val(localStorage.id);
         }
     });
@@ -63,10 +58,10 @@
               <label>Quantidade Disponíveis:</label>
               <input type="number" class="form-control" id="quant" aria-describedby="quantidade" min="1" name="quantidade">
               <label>Produto:</label><br>
-              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+              <select name="produto" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option selected>Selecione a opção</option>
-                <option name="produto" value="1">Mesa</option>
-                <option name="produto" value="2">Tenda</option>
+                <option  value="1">Mesa</option>
+                <option  value="2">Tenda</option>
               </select>
               <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option selected>Open this select menu</option>
@@ -74,7 +69,6 @@
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select> -->
-            </div>
             <button type="submit" class="btn btn-outline-primary btn-block" id="login">Adicionar</button>
             <a href="addlocal.html" class="btn btn-outline-danger btn-block" id="voltar">Voltar</a>
 

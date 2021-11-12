@@ -64,7 +64,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Informações Do Usuário</h5>
                   </div>
                   <div class="modal-body">
-                    <form method="POST">
+                    <form method="POST" id="formulario">
                     <input type="hidden" id="cd" aria-describedby="nome" placeholder=" Digite seu nome completo" name="cd"><br>
                     <label for="nome completo">Nome completo:</label><br>
                     <input type="text" id="name" aria-describedby="nome" placeholder=" Digite seu nome completo" name="nome"><br>
@@ -75,13 +75,14 @@
                     <label for="telefone">Telefone:</label><br>
                     <input type="text" id="tel" aria-describedby="tel" placeholder="(DDD)XXXXX-XXXX" name="telefone"><br>
                     <label for="exampleInputPassword1">Senha:</label><br>
-                    <input type="text" id="sen" placeholder="Digite sua senha" name="senha"><br>
-                    </form>
+                    <input type="Password" id="sen" placeholder="Digite sua senha" name="senha"><br>
+                   
                   </div>
                   <div class="modal-footer">
                     <button id="habilita" type="button"  class="btn btn-outline-primary btn-block">Editar</button>
-                    <button id="atualizar" type="hidden"  class="btn btn-outline-primary btn-block">Salvar</button>
-                    <button type="button" class="btn btn-outline-danger btn-block" data-bs-dismiss="modal">voltar</button>
+                    <button id="atualizar"  type=""  class="btn btn-outline-primary btn-block">Salvar</button>
+                    <button type="button" class="btn btn-outline-danger btn-block" data-bs-dismiss="modal">Voltar</button>
+                     </form>
                   </div>
                 </div>
               </div>

@@ -214,7 +214,7 @@ $(document).on('submit','#produto',function(e) {
 		type:'POST',
 		success: function(retorno){
 			//navigator.notification.alert(retorno, alertCallback, 'Aviso!');
-      //alert(retorno);
+      console.log(retorno);
 			$('#quant').val("");
       $(".modal-body").html(retorno);
       $("#alerta").modal("show");
